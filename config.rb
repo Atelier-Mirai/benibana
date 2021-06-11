@@ -14,8 +14,9 @@ end
 
 # レイアウト
 set :layout, 'site'
-page 'index.html', layout: 'top'
-page 'no_layout.html', layout: false
+# page 'index.html', layout: 'top'
+# page 'no_layout.html', layout: false
+# page '1.html', layout: false
 
 # ビルド時の設定
 configure :build do
