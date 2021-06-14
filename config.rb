@@ -17,6 +17,7 @@ set :layout, 'site'
 # page 'index.html', layout: 'top'
 # page 'no_layout.html', layout: false
 # page '1.html', layout: false
+page '1.html', layout: '1'
 
 # ビルド時の設定
 configure :build do

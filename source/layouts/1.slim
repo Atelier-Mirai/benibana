@@ -10,17 +10,32 @@ html
               rel:   'apple-touch-icon',
               sizes: '180x180',
               type:  'image/png'
+
     meta name="description" content="書籍「動くWebデザインアイディア帳」のサンプルサイトです"
-    / link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+
+    / reset css
     link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"
+    / jQuery
     script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 
-    / link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css"
-    / script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"
+    // IE Buster
     script nomodule="nomodule" src="https://cdn.jsdelivr.net/npm/ie-buster@2.0.1/dist/ie-buster.min.js"
     script nomodule="nomodule" ieBuster.init()
-    / = stylesheet_link_tag "style"
-    / = javascript_include_tag "site"
+
+    / Google Fonts
+    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP%7CParisienne&amp;display=swap"
+
+    / slick
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+
+    / stylesheet
+    = stylesheet_link_tag "parts/1"
+    = stylesheet_link_tag "layouts/1"
 
   body
     = yield
+
+    / slick
+    script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    / 自作スクリプト
+    = javascript_include_tag "1"

@@ -1,53 +1,62 @@
 /*===========================================================*/
 /*機能編 5-1-25 クリックしたらナビ背景コンテンツがぼかされる※IE11非対応*/
 /*===========================================================*/
-$(".openbtn").click(function () { //ボタンがクリックされたら
+$(".openbtn").on('click', function () { //ボタンがクリックされたら
   $(this).toggleClass('active'); //ボタン自身に activeクラスを付与し
   $("#g-nav").toggleClass('panelactive'); //ナビゲーションにpanelactiveクラスを付与
   $("#header,#container,#footer").toggleClass('mainblur'); //ぼかしたいエリアにmainblurクラスを付与
 });
-$("#g-nav a").click(function () { //ナビゲーションのリンクがクリックされたら
+
+$("#g-nav a").on('click', function () { //ナビゲーションのリンクがクリックされたら
   $(".openbtn").removeClass('active'); //ボタンの activeクラスを除去し
   $("#g-nav").removeClass('panelactive'); //ナビゲーションのpanelactiveクラスを除去し
   $("#header,#container,#footer").removeClass('mainblur'); //ぼかしているエリアのmainblurクラスを除去
 });
+
 /*===========================================================*/
 /*機能編 8-1-4	ページ内にある指定の範囲内で下から出現*/
 /*===========================================================*/
 //スクロールした際の動きを関数でまとめる
 function setFadeElement() {
-  var windowH = $(window).height(); //ウィンドウの高さを取得
-  var scroll = $(window).scrollTop(); //スクロール値を取得
+  let windowH      = $(window).height(); //ウィンドウの高さを取得
+  let scroll       = $(window).scrollTop(); //スクロール値を取得
   //出現範囲の指定
-  var contentsTop = Math.round($('#blog').offset().top); //要素までの高さを取得
-  var contentsH = $('#blog').outerHeight(true); //要素の高さを取得
+  let contentsTop  = Math.round($('#blog').offset().top); //要素までの高さを取得
+  let contentsH    = $('#blog').outerHeight(true); //要素の高さを取得
   //2つ目の出現範囲の指定※任意
-  var contentsTop2 = Math.round($('#footer').offset().top); //要素までの高さを取得
-  var contentsH2 = $('#footer').outerHeight(true); //要素の高さを取得
+  let contentsTop2 = Math.round($('#footer').offset().top); //要素までの高さを取得
+  let contentsH2   = $('#footer').outerHeight(true); //要素の高さを取得
+
   //出現範囲内に入ったかどうかをチェック
   if (scroll + windowH >= contentsTop && scroll + windowH <= contentsTop + contentsH) {
     $("#page-top").addClass("UpMove"); //入っていたらUpMoveをクラス追加
     $("#page-top").removeClass("DownMove"); //DownMoveを削除
     $(".hide-btn").removeClass("hide-btn"); //hide-btnを削除
-  } //2つ目の出現範囲に入ったかどうかをチェック※任意
+  }
+  //2つ目の出現範囲に入ったかどうかをチェック※任意
   else if (scroll + windowH >= contentsTop2 && scroll + windowH <= contentsTop2 + contentsH2) {
     $("#page-top").addClass("UpMove"); //入っていたらUpMoveをクラス追加
     $("#page-top").removeClass("DownMove"); //DownMoveを削除
-  } //それ以外は
+  }
+  //それ以外は
   else {
-    if (!$(".hide-btn").length) { //サイト表示時にDownMoveクラスを一瞬付与させないためのクラス付け。hide-btnがなければ下記の動作を行う
+    if (!$(".hide-btn").length) {
+      //サイト表示時にDownMoveクラスを一瞬付与させないためのクラス付け。
+      // hide-btnがなければ下記の動作を行う
       $("#page-top").addClass("DownMove"); //DownMoveをクラス追加
       $("#page-top").removeClass("UpMove"); //UpMoveを削除
     }
   }
 }
+
 // #page-topをクリックした際の設定
-$('#page-top').click(function () {
-  $('body,html').animate({
+$('#page-top').on('click', function () {
+  $('body, html').animate({
     scrollTop: 0 //ページトップまでスクロール
   }, 500); //ページトップスクロールの速さ。数字が大きいほど遅くなる
   return false; //リンク自体の無効化
 });
+
 /*===========================================================*/
 /*機能編 6-1-6 複数画像を並列に見せる*/
 /*===========================================================*/
@@ -56,7 +65,7 @@ $('.slider').slick({
   infinite: true, //スライドをループさせるかどうか。初期値はtrue。
   slidesToShow: 4, //スライドを画面に3枚見せる
   slidesToScroll: 4, //1回のスクロールで3枚の写真を移動して見せる
-  prevArrow: '<div class="slick-prev"></div>', //矢印部分PreviewのHTMLを変更
+  preletrow: '<div class="slick-prev"></div>', //矢印部分PreviewのHTMLを変更
   nextArrow: '<div class="slick-next"></div>', //矢印部分NextのHTMLを変更
   dots: true, //下部ドットナビゲーションの表示
   responsive: [{
@@ -79,6 +88,7 @@ $('.slider').slick({
     }
   }]
 });
+
 /*===========================================================*/
 /*印象編 4 最低限おぼえておきたい動き/
 /*===========================================================*/
@@ -86,20 +96,21 @@ $('.slider').slick({
 function fadeAnime() {
   // 4-1 ふわっ（その場で）
   $('.fadeInTrigger').each(function () { //fadeInTriggerというクラス名が
-    var elemPos = $(this).offset().top - 50; //要素より、50px上の
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
+    let elemPos      = $(this).offset().top - 50; //要素より、50px上の
+    let scroll       = $(window).scrollTop();
+    let windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight) {
       $(this).addClass('fadeIn'); // 画面内に入ったらfadeInというクラス名を追記
     } else {
       $(this).removeClass('fadeIn'); // 画面外に出たらfadeInというクラス名を外す
     }
   });
+
   // 4-4 ボンッ（拡大）
   $('.zoomOutTrigger').each(function () { //zoomOutTriggerというクラス名が
-    var elemPos = $(this).offset().top; //要素上の
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
+    let scroll       = $(window).scrollTop();
+    let elemPos      = $(this).offset().top; //要素上の
+    let windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight) {
       $(this).addClass('zoomOut'); // 画面内に入ったらzoomOutというクラス名を追記
     } else {
@@ -107,15 +118,16 @@ function fadeAnime() {
     }
   });
 }
+
 /*===========================================================*/
 /*印象編 8-2 テキストが流れるように出現（左から右）/
 /*===========================================================*/
 function slideAnime() {
   //====左右に動くアニメーションここから===
   $('.leftAnime').each(function () {
-    var elemPos = $(this).offset().top - 50;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
+    let elemPos      = $(this).offset().top - 50;
+    let scroll       = $(window).scrollTop();
+    let windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight) {
       //左から右へ表示するクラスを付与
       //テキスト要素を挟む親要素（左側）とテキスト要素を元位置でアニメーションをおこなう
@@ -127,10 +139,11 @@ function slideAnime() {
       $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
     }
   });
+
   $('.rightAnime').each(function () {
-    var elemPos = $(this).offset().top - 50;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
+    let elemPos      = $(this).offset().top - 50;
+    let scroll       = $(window).scrollTop();
+    let windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight) {
       //右から左へ表示するクラスを付与
       //テキスト要素を挟む親要素（右側）とテキスト要素を元位置でアニメーションをおこなう
@@ -144,15 +157,16 @@ function slideAnime() {
   });
   //====左右に動くアニメーションここまで===
 }
+
 /*===========================================================*/
 /*印象編 8-17 テキストがほのかに光りながら出現*/
 /*===========================================================*/
 // glowAnimeにglowというクラス名を付ける定義
 function GlowAnimeControl() {
   $('.glowAnime').each(function () {
-    var elemPos = $(this).offset().top - 50;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
+    let elemPos      = $(this).offset().top - 50;
+    let scroll       = $(window).scrollTop();
+    let windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight) {
       $(this).addClass("glow");
     } else {
@@ -160,15 +174,16 @@ function GlowAnimeControl() {
     }
   });
 }
+
 /*===========================================================*/
 /*印象編 8-9 テキストがじわっと出現*/
 /*===========================================================*/
 // blurTriggerにblurというクラス名を付ける定義
 function BlurTextAnimeControl() {
   $('.blurTrigger').each(function () { //blurTriggerというクラス名が
-    var elemPos = $(this).offset().top - 50; //要素より、50px上の
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
+    let elemPos      = $(this).offset().top - 50; //要素より、50px上の
+    let scroll       = $(window).scrollTop();
+    let windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight) {
       $(this).addClass('blur'); // 画面内に入ったらblurというクラス名を追記
     } else {
@@ -176,17 +191,19 @@ function BlurTextAnimeControl() {
     }
   });
 }
+
 /*===========================================================*/
 /*印象編 6-7 スクロールするとヘッダー背景画像が拡大*/
 /*===========================================================*/
 $(window).scroll(function () {
-  var scroll = $(window).scrollTop(); //スクロール値を定義
+  let scroll = $(window).scrollTop(); //スクロール値を定義
   //header-imgの背景
   $('#header-img').css({
     transform: 'scale(' + (100 + scroll / 10) / 100 + ')', //スクロール値を代入してscale1から拡大.scroll/10の値を小さくすると拡大値が大きくなる
     top: -(scroll / 50) + "%", //スクロール値を代入してtopの位置をマイナスにずらす
   });
 });
+
 /*===========================================================*/
 /*関数をまとめる*/
 /*===========================================================*/
@@ -198,6 +215,7 @@ $(window).scroll(function () {
   GlowAnimeControl(); //印象編 8-17 テキストがほのかに光りながら出現の関数を呼ぶ
   BlurTextAnimeControl(); //印象編 8-9 テキストがじわっと出現の関数を呼ぶ
 }); // ここまで画面をスクロールをしたら動かしたい場合の記述
+
 // ページが読み込まれたらすぐに動かしたい場合の記述
 $(window).on('load', function () {
   $("#splash-logo").delay(1200).fadeOut('slow'); //ロゴを1.2秒でフェードアウトする記述
@@ -206,16 +224,16 @@ $(window).on('load', function () {
     $('body').addClass('appear'); //フェードアウト後bodyにappearクラス付与
     /* 印象編 8-17 テキストがほのかに光りながら出現*/
     //spanタグを追加する
-    var element = $(".glowAnime");
-    element.each(function () {
-      var text = $(this).text();
-      var textbox = "";
-      text.split('').forEach(function (t, i) {
+    let $element = $(".glowAnime");
+    $element.each(function () {
+      let $text    = $(this).text();
+      let textbox = "";
+      $text.split('').forEach(function (t, i) {
         if (t !== " ") {
           if (i < 10) {
             textbox += '<span style="animation-delay:.' + i + 's;">' + t + '</span>';
           } else {
-            var n = i / 10;
+            let n = i / 10;
             textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>';
           }
         } else {
@@ -226,6 +244,7 @@ $(window).on('load', function () {
     });
     GlowAnimeControl();
   });
+
   //=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
   /*===========================================================*/
   /*機能編 4-2-5背景色が伸びる（中央から外）*/

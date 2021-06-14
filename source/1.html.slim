@@ -2,12 +2,6 @@
 title: 1. 女性向けサイト
 ---
 
-link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP%7CParisienne&amp;display=swap" rel="stylesheet"
-link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"
-link rel="stylesheet" href="1/parts.css"
-link rel="stylesheet" href="1/layout.css"
-
 #splash
   #splash-logo
     p
@@ -16,6 +10,7 @@ link rel="stylesheet" href="1/layout.css"
           | Beautiful Days
 .splashbg1
 .splashbg2
+
 #wrapper
   header#header
     .header-area
@@ -55,6 +50,7 @@ link rel="stylesheet" href="1/layout.css"
         li.blurTrigger
           a href="#"
             | Blog
+
 main#container
   article#lead.inner.zoomOutTrigger
     .lead-img.fadeInTrigger
@@ -83,6 +79,7 @@ main#container
         a.btn04.bordertop href="#"
           span
             | お店のご紹介
+
   section#menu
     h2
       span.slide-in.leftAnime
@@ -94,7 +91,7 @@ main#container
           a href="#"
             figure.circle
               span.mask
-              img src="1/01.jpg" alt=""
+              = image_tag "1/01.jpg"
           .menu-area
             h3
               | ハンドケア / フットケア
@@ -105,7 +102,7 @@ main#container
           a href="#"
             figure.circle
               span.mask
-              img src="1/02.jpg" alt=""
+              = image_tag "1/02.jpg"
           .menu-area
             h3
               | ウェディングメニュー
@@ -116,7 +113,7 @@ main#container
           a href="#"
             figure.circle
               span.mask
-              img src="1/03.jpg" alt=""
+              = image_tag "1/03.jpg"
           .menu-area
             h3
               | ボディトリートメント
@@ -127,7 +124,7 @@ main#container
           a href="#"
             figure.circle
               span.mask
-              img src="1/04.jpg" alt=""
+              = image_tag "1/04.jpg"
           .menu-area
             h3
               | フェイシャル
@@ -138,7 +135,7 @@ main#container
           a href="#"
             figure.circle
               span.mask
-              img src="1/05.jpg" alt=""
+              = image_tag "1/05.jpg"
           .menu-area
             h3
               | メイク / セット
@@ -148,22 +145,23 @@ main#container
       a.btn04.bordertop href="#"
         span
           | メニュー一覧を見る
+
   section#contact.inner
     .contact-img.fadeInTrigger
     .contact-area.fadeInTrigger
       h2
         | ご予約方法
       dl
+        dt
+          a href="tel:03-1234-5678"
+            | TEL 03-1234-5678
+        dd
+          | （営業時間：10:00-20:00）
+      .contact-btn
+        a.btn04.bordertop href="#"
+          span
+            | お問い合わせ
 
-    dt
-      a href="tel:03-1234-5678"
-        | TEL 03-1234-5678
-    dd
-      | （営業時間：10:00-20:00）
-    .contact-btn
-      a.btn04.bordertop href="#"
-        span
-          | お問い合わせ
 
   article#blog.inner
     h2
@@ -176,12 +174,12 @@ main#container
       article.fadeInTrigger
         a.bgDU href="#"
           figure.mask
-            img src="1/blog_01.jpg" alt=""
-            time datetime="2021-03-04"
-              | 2021.3.4
+            = image_tag "1/blog_01.jpg"
+            time datetime="2021-07-07"
+              | 2021.7.7
           .cap
-            time datetime="2021-08-09"
-              | 2021.3.4
+            time datetime="2021-07-07"
+              | 2021.7.7
             h3
               | お得なコスメキャンペーンを実施中！
             p
@@ -194,9 +192,9 @@ main#container
         article.fadeInTrigger
           a.bgDU href="#"
             figure.mask
-              img src="1/blog_02.jpg" alt=""
-              time datetime="2021-01-04"
-                | 2021.1.4
+              = image_tag "1/blog_02.jpg"
+              time datetime="2021-01-01"
+                | 2021.1.1
             .cap
               h3
                 | 新春のご挨拶
@@ -205,7 +203,7 @@ main#container
         article.fadeInTrigger
           a.bgDU href="#"
             figure.mask
-              img src="1/blog_04.jpg" alt=""
+              = image_tag "1/blog_03.jpg"
               time datetime="2020-12-25"
                 | 2020.12.25
             .cap
@@ -216,7 +214,7 @@ main#container
         article.fadeInTrigger
           a.bgDU href="#"
             figure.mask
-              img src="1/blog_03.jpg" alt=""
+              = image_tag "1/blog_03.jpg"
               time datetime="2020-12-24"
                 | 2020.12.24
             .cap
@@ -227,9 +225,9 @@ main#container
         article.fadeInTrigger
           a.bgDU href="#"
             figure.mask
-              img src="1/blog_05.jpg" alt=""
-              time datetime="2020-11-09"
-                | 2020.11.09
+              = image_tag "1/blog_05.jpg"
+              time datetime="2020-11-11"
+                | 2020.11.11
             .cap
               h3
                 | 美容に良い食べ物のご紹介！
@@ -238,7 +236,7 @@ main#container
         article.fadeInTrigger
           a.bgDU href="#"
             figure.mask
-              img src="1/blog_06.jpg" alt=""
+              = image_tag "1/blog_06.jpg"
               time datetime="2020-08-09"
                 | 2020.8.9
             .cap
@@ -249,7 +247,7 @@ main#container
         article.fadeInTrigger
           a.bgDU href="#"
             figure.mask
-              img src="1/blog_07.jpg" alt=""
+              = image_tag "1/blog_07.jpg"
               time datetime="2020-07-07"
                 | 2020.7.7
             .cap
@@ -287,14 +285,12 @@ footer#footer.inner
           li
             a href="#"
               | Blog
+
   p#page-top.hide-btn
     a href="#"
       span
+
   small
     span.slide-in.leftAnime
       span.slide-in_inner.leftAnimeInner
         | © Beautiful days
-
-script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-script src="1/script.js"
-/ = javascript_include_tag "1"
