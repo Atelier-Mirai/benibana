@@ -21,10 +21,6 @@ $font_1: "serif";
 $font_2: "Parisienne";
 $font_3: "cursive";
 
-//urls
-$url_0: "1/lead.jpg";
-$url_1: "1/contact.jpg";
-
 //@extend-elements
 //original selectors
 //#menu h2, #blog h2
@@ -162,7 +158,8 @@ h1 {
   }
 }
 
-@media screen and(max-width:768px) {
+// 768px 以下ならば
+@media (max-width:768px) {
   #lead {
     flex-direction: column-reverse;
     .lead-img {
@@ -288,7 +285,7 @@ h1 {
   .lead-img {
     width: 46%;
     min-height: 400px;
-    background: image-url($url_0) no-repeat center;
+    background: image-url("1/lead.jpg") no-repeat center;
     background-size: cover;
   }
   .lead-area {
@@ -386,7 +383,7 @@ h1 {
   .contact-img {
     width: 70%;
     min-height: 300px;
-    background: image-url($url_1) no-repeat center;
+    background: image-url("1/contact.jpg") no-repeat center;
     background-size: cover;
   }
   .contact-area {

@@ -339,7 +339,7 @@ body.appear #vidual-area::after{
 
 #service .service-img{
     height: 60vh;
-    background:url("01.jpg") no-repeat center;
+    background: image-url("01.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -367,7 +367,7 @@ body.appear #vidual-area::after{
 
 .news-img{
     height: 60vh;
-    background:url("02.jpg") no-repeat center;
+    background: image-url("02.jpg") no-repeat center;
     background-size: cover;
 }
 

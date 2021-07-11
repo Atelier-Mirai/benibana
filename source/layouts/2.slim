@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title
+      = current_page.data.title || "動くWebデザインアイディア帳"
+    = favicon_tag 'favicon.ico'
+    = favicon_tag 'apple-touch-icon-180x180.png',
+              rel:   'apple-touch-icon',
+              sizes: '180x180',
+              type:  'image/png'
+
+    meta name="description" content="書籍「動くWebデザインアイディア帳」のサンプルサイトです"
+
+    / reset css
+    link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"
+    / jQuery
+    script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+
+    // IE Buster
+    script nomodule="nomodule" src="https://cdn.jsdelivr.net/npm/ie-buster@2.0.1/dist/ie-buster.min.js"
+    script nomodule="nomodule" ieBuster.init()
+
+    / Google Fonts
+    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP%7COswald&amp;display=swap"
+
+    / vegas
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css"
+
+    / lightbox2
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+
+    / stylesheet
+    = stylesheet_link_tag "parts/2"
+    = stylesheet_link_tag "layouts/2"
+
+  body
+    = yield
+
+    / vegas
+    script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"
+
+    / lightbox2
+    script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"
+
+    /shuffle-text
+    script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.4/build/shuffle-text.min.js"
+
+    / 自作スクリプト
+    = javascript_include_tag "2"
