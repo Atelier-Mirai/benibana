@@ -28,8 +28,7 @@ $wakakusairo:       #c3d825; // 若草色(わかくさいろ) */
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 #splash-logo img{
@@ -52,68 +51,31 @@ body.appear .splashbg{
     height: 100vh;
     top: 0;
 	left: 0;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform: scaleY(0);
     background-color: var(--kiniro);/*伸びる背景色の設定*/
     background: var(--kiniro);
-	-webkit-animation-name:PageAnime;
-	        animation-name:PageAnime;
-	-webkit-animation-duration:1.2s;
-	        animation-duration:1.2s;
-	-webkit-animation-timing-function:ease-in-out;
-	        animation-timing-function:ease-in-out;
-	-webkit-animation-fill-mode:forwards;
-	        animation-fill-mode:forwards;
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
 
-}
-
-@-webkit-keyframes PageAnime{
-	0% {
-		-webkit-transform-origin:bottom;
-		        transform-origin:bottom;
-		-webkit-transform:scaleY(0);
-		        transform:scaleY(0);
-	}
-	50% {
-		-webkit-transform-origin:bottom;
-		        transform-origin:bottom;
-		-webkit-transform:scaleY(1);
-		        transform:scaleY(1);
-	}
-	50.001% {
-		-webkit-transform-origin:top;
-		        transform-origin:top;
-	}
-	100% {
-		-webkit-transform-origin:top;
-		        transform-origin:top;
-		-webkit-transform:scaleY(0);
-		        transform:scaleY(0);
-	}
 }
 
 @keyframes PageAnime{
 	0% {
-		-webkit-transform-origin:bottom;
-		        transform-origin:bottom;
-		-webkit-transform:scaleY(0);
-		        transform:scaleY(0);
+		transform-origin:bottom;
+		transform:scaleY(0);
 	}
 	50% {
-		-webkit-transform-origin:bottom;
-		        transform-origin:bottom;
-		-webkit-transform:scaleY(1);
-		        transform:scaleY(1);
+		transform-origin:bottom;
+		transform:scaleY(1);
 	}
 	50.001% {
-		-webkit-transform-origin:top;
-		        transform-origin:top;
+		transform-origin:top;
 	}
 	100% {
-		-webkit-transform-origin:top;
-		        transform-origin:top;
-		-webkit-transform:scaleY(0);
-		        transform:scaleY(0);
+		transform-origin:top;
+		transform:scaleY(0);
 	}
 }
 
@@ -125,24 +87,11 @@ body.appear .splashbg{
 
 /*bodyにappearクラスがついたら出現*/
 body.appear #wrapper{
-	-webkit-animation-name:PageAnimeAppear;
-	        animation-name:PageAnimeAppear;
-	-webkit-animation-duration:1s;
-	        animation-duration:1s;
-	-webkit-animation-delay: 0.8s;
-	        animation-delay: 0.8s;
-	-webkit-animation-fill-mode:forwards;
-	        animation-fill-mode:forwards;
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
 	opacity: 0;
-}
-
-@-webkit-keyframes PageAnimeAppear{
-	0% {
-	opacity: 0;
-	}
-	100% {
-	opacity: 1;
-}
 }
 
 @keyframes PageAnimeAppear{
@@ -168,7 +117,6 @@ body.appear #wrapper{
     height: 100vh;/*ナビの高さ*/
 	background:var(--kiniro);
     /*動き*/
-	-webkit-transition: all 0.6s;
 	transition: all 0.6s;
 }
 
@@ -195,8 +143,7 @@ body.appear #wrapper{
     z-index: 999;
     top:50%;
     left:50%;
-    -webkit-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 /*リストのレイアウト設定*/
@@ -234,7 +181,6 @@ body.appear #wrapper{
 /*ボタン内側*/
 .openbtn span{
     display: inline-block;
-    -webkit-transition: all .4s;
     transition: all .4s;/*アニメーションの設定*/
     position: absolute;
   }
@@ -279,8 +225,7 @@ body.appear #wrapper{
 .openbtn.active span:nth-of-type(1) {
     top: 28px;
     left: 30px;
-    -webkit-transform: translateY(6px) rotate(-45deg);
-            transform: translateY(6px) rotate(-45deg);
+    transform: translateY(6px) rotate(-45deg);
 }
 
 .openbtn.active span:nth-of-type(2) {
@@ -290,8 +235,7 @@ body.appear #wrapper{
 .openbtn.active span:nth-of-type(3){
     top: 40px;
     left: 30px;
-    -webkit-transform: translateY(-6px) rotate(45deg);
-            transform: translateY(-6px) rotate(45deg);
+    transform: translateY(-6px) rotate(45deg);
 }
 
 
@@ -332,7 +276,6 @@ body.appear #wrapper{
 	text-decoration: none;
 	color: #333;
 	padding:0 15px;
-	-webkit-transition:all 0.3s;
 	transition:all 0.3s;
 }
 
@@ -389,7 +332,6 @@ body.appear #wrapper{
 	width:100%;
 	height:3px;
     /*アニメーションの指定*/
-	-webkit-transition:all 0.3s ease-in-out;
 	transition:all 0.3s ease-in-out;
 }
 
@@ -415,7 +357,6 @@ body.appear #wrapper{
 	text-transform: uppercase;
 	text-decoration: none;
 	font-size:0.6rem;
-	-webkit-transition:all 0.3s;
 	transition:all 0.3s;
 }
 
@@ -431,71 +372,39 @@ body.appear #wrapper{
 	z-index: 2;
     /*はじめは非表示*/
 	opacity: 0;
-	-webkit-transform: translateX(100px);
-	        transform: translateX(100px);
+	transform: translateX(100px);
 }
 
 /*　左の動き　*/
 
 #page-top.LeftMove{
-	-webkit-animation: LeftAnime 0.5s forwards;
-	        animation: LeftAnime 0.5s forwards;
-}
-
-@-webkit-keyframes LeftAnime{
-  from {
-    opacity: 0;
-	-webkit-transform: translateX(100px);
-	        transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-	-webkit-transform: translateX(0);
-	        transform: translateX(0);
-  }
+	animation: LeftAnime 0.5s forwards;
 }
 
 @keyframes LeftAnime{
   from {
     opacity: 0;
-	-webkit-transform: translateX(100px);
-	        transform: translateX(100px);
+	transform: translateX(100px);
   }
   to {
     opacity: 1;
-	-webkit-transform: translateX(0);
-	        transform: translateX(0);
+	transform: translateX(0);
   }
 }
 
 /*　右の動き　*/
 
 #page-top.RightMove{
-	-webkit-animation: RightAnime 0.5s forwards;
-	        animation: RightAnime 0.5s forwards;
-}
-@-webkit-keyframes RightAnime{
-  from {
-  	opacity: 1;
-	-webkit-transform: translateX(0);
-	        transform: translateX(0);
-  }
-  to {
-  	opacity: 1;
-	-webkit-transform: translateX(100px);
-	        transform: translateX(100px);
-  }
+	animation: RightAnime 0.5s forwards;
 }
 @keyframes RightAnime{
   from {
   	opacity: 1;
-	-webkit-transform: translateX(0);
-	        transform: translateX(0);
+	transform: translateX(0);
   }
   to {
   	opacity: 1;
-	-webkit-transform: translateX(100px);
-	        transform: translateX(100px);
+	transform: translateX(100px);
   }
 }
 
@@ -526,7 +435,6 @@ body.appear #wrapper{
     font-size:1rem;
     font-weight: normal;
     padding: 3% 3% 3% 50px;
-    -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
 
@@ -549,28 +457,24 @@ body.appear #wrapper{
 .title::before{
     top:48%;
     left: 15px;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
 
 }
 .title::after{
     top:48%;
     left: 15px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
 
 }
 
 /*　closeというクラスがついたら形状変化　*/
 
 .title.close::before{
-	-webkit-transform: rotate(45deg);
-	        transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .title.close::after{
-	-webkit-transform: rotate(-45deg);
-	        transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 /*アコーディオンで現れるエリア*/
@@ -628,25 +532,12 @@ body.appear #wrapper{
 
 /*4-9　シャッ（左から）*/
 .bgextend{
-	-webkit-animation-name:bgextendAnimeBase;
-	        animation-name:bgextendAnimeBase;
-	-webkit-animation-duration:1s;
-	        animation-duration:1s;
-	-webkit-animation-fill-mode:forwards;
-	        animation-fill-mode:forwards;
+	animation-name:bgextendAnimeBase;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
 	position: relative;
 	overflow: hidden;/*　はみ出た色要素を隠す　*/
 	opacity:0;
-}
-
-@-webkit-keyframes bgextendAnimeBase{
-  from {
-    opacity:0;
-  }
-
-  to {
-    opacity:1;
-}
 }
 
 @keyframes bgextendAnimeBase{
@@ -661,24 +552,11 @@ body.appear #wrapper{
 
 /*中の要素*/
 .bgappear{
-	-webkit-animation-name:bgextendAnimeSecond;
-	        animation-name:bgextendAnimeSecond;
-	-webkit-animation-duration:1s;
-	        animation-duration:1s;
-	-webkit-animation-delay: 0.6s;
-	        animation-delay: 0.6s;
-	-webkit-animation-fill-mode:forwards;
-	        animation-fill-mode:forwards;
+	animation-name:bgextendAnimeSecond;
+	animation-duration:1s;
+	animation-delay: 0.6s;
+	animation-fill-mode:forwards;
 	opacity: 0;
-}
-
-@-webkit-keyframes bgextendAnimeSecond{
-	0% {
-	opacity: 0;
-	}
-	100% {
-	opacity: 1;
-}
 }
 
 @keyframes bgextendAnimeSecond{
@@ -691,145 +569,72 @@ body.appear #wrapper{
 }
 
 .bgLRextend::before{
-	-webkit-animation-name:bgLRextendAnime;
-	        animation-name:bgLRextendAnime;
-	-webkit-animation-duration:1s;
-	        animation-duration:1s;
-	-webkit-animation-fill-mode:forwards;
-	        animation-fill-mode:forwards;
+	animation-name:bgLRextendAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: var(--kiniro);/*伸びる背景色の設定*/
 }
-@-webkit-keyframes bgLRextendAnime{
-	0% {
-		-webkit-transform-origin:left;
-		        transform-origin:left;
-		-webkit-transform:scaleX(0);
-		        transform:scaleX(0);
-	}
-	50% {
-		-webkit-transform-origin:left;
-		        transform-origin:left;
-		-webkit-transform:scaleX(1);
-		        transform:scaleX(1);
-	}
-	50.001% {
-		-webkit-transform-origin:right;
-		        transform-origin:right;
-	}
-	100% {
-		-webkit-transform-origin:right;
-		        transform-origin:right;
-		-webkit-transform:scaleX(0);
-		        transform:scaleX(0);
-	}
-}
 @keyframes bgLRextendAnime{
 	0% {
-		-webkit-transform-origin:left;
-		        transform-origin:left;
-		-webkit-transform:scaleX(0);
-		        transform:scaleX(0);
+		transform-origin:left;
+		transform:scaleX(0);
 	}
 	50% {
-		-webkit-transform-origin:left;
-		        transform-origin:left;
-		-webkit-transform:scaleX(1);
-		        transform:scaleX(1);
+		transform-origin:left;
+		transform:scaleX(1);
 	}
 	50.001% {
-		-webkit-transform-origin:right;
-		        transform-origin:right;
+		transform-origin:right;
 	}
 	100% {
-		-webkit-transform-origin:right;
-		        transform-origin:right;
-		-webkit-transform:scaleX(0);
-		        transform:scaleX(0);
+		transform-origin:right;
+		transform:scaleX(0);
 	}
 }
 
 /* 4-1 ふわっ（下から） */
 
 .fadeUp{
--webkit-animation-name: fadeUpAnime;
-        animation-name: fadeUpAnime;
--webkit-animation-duration:0.5s;
-        animation-duration:0.5s;
--webkit-animation-fill-mode:forwards;
-        animation-fill-mode:forwards;
+animation-name: fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
 opacity:0;
-}
-
-@-webkit-keyframes fadeUpAnime{
-  from {
-    opacity: 0;
-	-webkit-transform: translateY(100px);
-	        transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-	-webkit-transform: translateY(0);
-	        transform: translateY(0);
-  }
 }
 
 @keyframes fadeUpAnime{
   from {
     opacity: 0;
-	-webkit-transform: translateY(100px);
-	        transform: translateY(100px);
+	transform: translateY(100px);
   }
 
   to {
     opacity: 1;
-	-webkit-transform: translateY(0);
-	        transform: translateY(0);
+	transform: translateY(0);
   }
 }
 
 
 /* 4-2　パタッ（左へ） */
 .flipLeft{
--webkit-animation-name: flipLeftAnime;
-        animation-name: flipLeftAnime;
--webkit-animation-duration:0.5s;
-        animation-duration:0.5s;
--webkit-animation-fill-mode:forwards;
-        animation-fill-mode:forwards;
--webkit-perspective-origin: left center;
-        perspective-origin: left center;
+animation-name: flipLeftAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+perspective-origin: left center;
 opacity:0;
-}
-
-@-webkit-keyframes flipLeftAnime{
-  from {
-   -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
-           transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
- 	opacity: 0;
-  }
-
-  to {
-  -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
-          transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
-  opacity: 1;
-  }
 }
 
 @keyframes flipLeftAnime{
   from {
-   -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
-           transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+   transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
  	opacity: 0;
   }
 
   to {
-  -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
-          transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+  transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
   opacity: 1;
   }
 }
@@ -837,8 +642,7 @@ opacity:0;
 /* スマホ表示用。flipLeftTriggerを指定している親要素に指定しないとうまく動かない*/
 #vision,
 .service-area{
-    -webkit-transform:  translate3d(0, 0, 0);
-            transform:  translate3d(0, 0, 0);
+    transform:  translate3d(0, 0, 0);
 }
 
 /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
@@ -869,7 +673,7 @@ opacity:0;
 	width:90%;
 	height: 80vh;
 	/*背景画像設定*/
-	background:url("../img/shinei.jpg") no-repeat center;
+	background:url("../images/shinei.jpg") no-repeat center;
 	background-size:cover;
 }
 

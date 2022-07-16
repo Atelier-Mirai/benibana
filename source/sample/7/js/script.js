@@ -22,19 +22,19 @@ function ScrollAnime() {//スクロールした際のナビゲーションの関
 	$("#pc-nav li").removeClass('current');//全てのナビゲーションの現在地クラスを除去
 	if(scroll >= elemTop[0] && scroll < elemTop[1]) {//.scroll-point 1つめ以上.scroll-point 2つめ未満
      $(NavElem[0]).addClass('current');//1つめのliに現在地クラスを付与
-    } 
+    }
     else if(scroll >= elemTop[1] && scroll < elemTop[2]) {//.scroll-point 2つめ以上.scroll-point 3つめ未満
      $(NavElem[1]).addClass('current');//2つめのliに現在地クラスを付与
-    } 
+    }
     else if(scroll >= elemTop[2] && scroll < elemTop[3]) {//.scroll-point 3つめ以上.scroll-point 4つめ未満
      $(NavElem[2]).addClass('current');//3つめのliに現在地クラスを付与
-    } 
+    }
     else if(scroll >= elemTop[3] && scroll < elemTop[4]) {//.scroll-point 4つめ以上.scroll-point 5つめ未満
      $(NavElem[3]).addClass('current');//4つめのliに現在地クラスを付与
-    } 
+    }
     else if(scroll >= elemTop[4]) {// .scroll-point 5つめ（area-5）以上
       $(NavElem[4]).addClass('current');//5つめのliに現在地クラスを付与
-    } 
+    }
 }
 
 //ナビゲーションをクリックした際のスムーススクロール
@@ -105,11 +105,11 @@ $('#page-top').click(function () {
 //アコーディオンをクリックした時の動作
 $('.title').on('click', function() {//タイトル要素をクリックしたら
 	$('.box').slideUp(500);//クラス名.boxがついたすべてのアコーディオンを閉じる
-    
+
 	var findElm = $(this).next(".box");//タイトル直後のアコーディオンを行うエリアを取得
-    
+
 	if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば
-		$(this).removeClass('close');//クラス名を除去    
+		$(this).removeClass('close');//クラス名を除去
 	}else{//それ以外は
 		$('.close').removeClass('close'); //クラス名closeを全て除去した後
 		$(this).addClass('close');//クリックしたタイトルにクラス名closeを付与し
@@ -125,7 +125,7 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
 var slider;
 var sliderFlag = false;
 var breakpoint = 768;//768px以下の場合
-  
+
 function sliderSet() {
         var windowWidth = window.innerWidth;
         if (windowWidth >= breakpoint && !sliderFlag) {//768px以上は1行でスライダー表示
@@ -149,7 +149,7 @@ function sliderSet() {
 // 動きのきっかけの起点となるアニメーションの名前を定義
 function fadeAnime(){
   // 4-9 シャッ（左から）
-	
+
 	$('.bgLRextendTrigger').each(function(){ //bgLRextendTriggerというクラス名が
 		var elemPos = $(this).offset().top-50;//要素より、50px上の
 		var scroll = $(window).scrollTop();
@@ -159,7 +159,7 @@ function fadeAnime(){
 		}else{
 			$(this).removeClass('bgLRextend');// 画面外に出たらbgLRextendというクラス名を外す
 		}
-	});	
+	});
     $('.bgappearTrigger').each(function(){ //bgappearTriggerというクラス名が
 		var elemPos = $(this).offset().top-50;//要素より、50px上の
 		var scroll = $(window).scrollTop();
@@ -181,7 +181,7 @@ $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
 		$(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
 		}
 		});
-	
+
 	// 4-2 パタッ（左へ）
 $('.flipLeftTrigger').each(function(){ //flipLeftTriggerというクラス名が
 		var elemPos = $(this).offset().top-50;//要素より、50px上の
@@ -193,7 +193,7 @@ $('.flipLeftTrigger').each(function(){ //flipLeftTriggerというクラス名が
 		$(this).removeClass('flipLeft');// 画面外に出たらflipLeftというクラス名を外す
 		}
 		});
-    
+
 }
 
 
@@ -219,7 +219,7 @@ $(window).on('load',function(){
 
     $("#splash-logo").delay(1200).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
 
-     //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる  
+     //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
 	$("#splash").delay(1500).fadeOut('slow',function(){//機能編 4-2-1 背景色が伸びる（下から上）が動作した後に下記アニメーションを実行
         $('body').addClass('appear');//機能編 4-2-1 背景色が伸びる（下から上）
         sliderSet();//機能編  9-4-1 ニュースティッカーの動きの関数を呼ぶ
@@ -234,18 +234,18 @@ $(window).on('load',function(){
 		var Box =$(element).children('.box');	//openクラスの子要素boxクラスを取得
 		$(Box).slideDown(500);					//アコーディオンを開く
 	});
-        
+
     });
     //=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
-    
+
     /*===========================================================*/
     /*機能編  4-2-1 背景色が伸びる（下から上） */
     /*===========================================================*/
 
-    //=====ここから背景が伸びた後に動かしたいJSをまとめる   
-    $('.splashbg').on('animationend', function() {        
+    //=====ここから背景が伸びた後に動かしたいJSをまとめる
+    $('.splashbg').on('animationend', function() {
         fadeAnime();//印象編 4 最低限おぼえておきたい動きの関数を呼ぶ
-    });  
+    });
     //=====ここまで背景が伸びた後に動かしたいJSをまとめる
-	
+
 });// ここまでページが読み込まれたらすぐに動かしたい場合の記述

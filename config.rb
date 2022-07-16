@@ -13,10 +13,10 @@ activate :autoprefixer do |prefix|
 end
 
 # レイアウト
-set :layout, 'site'
+# set :layout, 'site'
 # page 'index.html', layout: 'top'
 # page 'no_layout.html', layout: false
-# page '*.html', layout: false
+page '*.html', layout: false
 # page '1.html', layout: false
 # page '1.html', layout: '1'
 # page '2.html', layout: '2'

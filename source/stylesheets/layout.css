@@ -24,7 +24,7 @@ body{
 	}
 }
 
-*{-webkit-box-sizing: border-box;box-sizing: border-box;}
+*{box-sizing: border-box;}
 
 ul{
 	margin:0;
@@ -186,8 +186,7 @@ h2{
 }
 
 .bx-wrapper{
-    -webkit-box-shadow:none;
-            box-shadow:none;
+    box-shadow:none;
     border:none;
 }
 
@@ -211,7 +210,7 @@ h2{
 #vision .img{
     width:40%;
     min-height: 590px;
-    background:url("../img/zenkei2.jpg") no-repeat center;
+    background:url("../images/zenkei2.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -332,8 +331,7 @@ h2{
 #service .service-area .content{
     width:40%;
     background:#fff;
-    -webkit-box-shadow: 0 0 20px #ccc;
-            box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,8 +354,7 @@ h2{
 #service .service-area .content{
     width:100%;
     top:-10px;
-    -webkit-animation:none;
-            animation:none;
+    animation:none;
     opacity: 1;
     z-index: 1;
 }
@@ -466,7 +463,7 @@ h2{
 .faq-bg{
     position: relative;
     height: 55vh;
-    background:url("../img/souko.jpg") no-repeat center;
+    background:url("../images/souko.jpg") no-repeat center;
     background-size:cover;
     margin: 0 0 200px 25%;
 }
@@ -570,7 +567,6 @@ h2{
     padding: 5px 20px;
     width:152px;
     margin: 0 auto;
-    -webkit-transition: all .3s;
     transition: all .3s;
 }
 

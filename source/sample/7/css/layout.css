@@ -8,7 +8,7 @@ body{
 	line-height:1.85;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%; 
+	-webkit-text-size-adjust: 100%;
 	word-wrap: break-word;
 }
 
@@ -152,7 +152,7 @@ h2{
 #main-area{
     width:90%;
     margin:0 auto;
-    padding: 50px 0; 
+    padding: 50px 0;
 }
 
 /* topics */
@@ -195,7 +195,7 @@ h2{
     #vision{
         margin:0 0 50px 0;
     }
-    
+
 }
 
 #vision .img{
@@ -206,7 +206,7 @@ h2{
 }
 
 #vision .content{
-   width:50%; 
+   width:50%;
     text-align: right;
 }
 
@@ -218,9 +218,9 @@ h2{
 }
 
 #vision .content{
-   width:100%; 
+   width:100%;
     text-align: left;
-}  
+}
 }
 
 #vision h2{
@@ -245,7 +245,7 @@ h2{
 #vision .vision-lead{
     font-size:1rem;
     }
-    
+
 }
 
 #vision .vision-lead::after{
@@ -286,15 +286,15 @@ h2{
 
 @media screen and (max-width:768px) {
 #service .service-area{
-    margin:0 0 200px 0;   
+    margin:0 0 200px 0;
 }
 }
 
 @media screen and (max-width:590px) {
  #service .service-area{
-    margin:0 0 50px 0;   
+    margin:0 0 50px 0;
 }
-   
+
 }
 
 #service .service-area::after{
@@ -333,7 +333,7 @@ h2{
 #service .service-area .content{
     width:47%;
     top:100px;
-    }  
+    }
 }
 
 @media screen and (max-width:590px) {
@@ -351,7 +351,7 @@ h2{
 }
 
 #service .service-area .content-area{
-    padding:40px;   
+    padding:40px;
 }
 
 #service .service-area .content-area h3{
@@ -368,7 +368,7 @@ h2{
 }
 
 #service .service-area .content-area p{
-     margin:0 0 30px 0;   
+     margin:0 0 30px 0;
 }
 
 #service .btn{
@@ -385,7 +385,7 @@ h2{
 #about{
     margin: 0 0 100px 0;
 }
-    
+
 }
 
 #about h2{
@@ -425,7 +425,7 @@ h2{
 @media screen and (max-width:590px) {
 
 #about .about-list dt{
-     padding:0 0 0 10px; 
+     padding:0 0 0 10px;
     }
 }
 
@@ -473,18 +473,18 @@ h2{
 .faq-bg,
 .faq-bg::after{
     height:35vh;
-}   
+}
 }
 
 @media screen and (max-width:550px) {
 #faq{
     margin:0 0 100px 0;
 }
-    
+
 #faq h2{
- margin: 0 0 50px 0;   
+ margin: 0 0 50px 0;
 }
-    
+
 .faq-bg{
     margin:0 0 100px 25%;
 }
@@ -492,7 +492,7 @@ h2{
 .faq-bg,
 .faq-bg::after{
     height:20vh;
-} 
+}
 }
 
 /* contact */
@@ -528,8 +528,8 @@ h2{
     font-size: 16px;
 }
 
-#contact .form-list input[type='text'] , 
-#contact .form-list input[type='email'] , 
+#contact .form-list input[type='text'] ,
+#contact .form-list input[type='email'] ,
 #contact .form-list textarea{
 	width:100%;
 	border:1px solid #666;
@@ -562,7 +562,7 @@ h2{
 #contact input[type='submit']:hover{
     background: #333;
     color: #fff;
-} 
+}
 
 #contact .form-list dl{
     display: flex;
@@ -591,13 +591,13 @@ h2{
 #contact .form-list dd{
     width:100%;
 }
-	
+
 }
 
 /* footer */
 
 #footer{
-    padding: 100px 0;
+    padding: 30px 0;
     border-top:1px solid #333;
     text-align: center;
     background: #fff;
@@ -615,6 +615,3 @@ h2{
 #footer small{
      color:#888;
 }
-
-
-
